@@ -1,7 +1,8 @@
-package br.com.gaudium.entrega;
+package br.com.gaudium.entrega.ui;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,6 +25,8 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import br.com.gaudium.entrega.R;
+import br.com.gaudium.entrega.Util;
 import br.com.gaudium.entrega.maps.LatLngInterpolator;
 import br.com.gaudium.entrega.model.DebugLocationRetriever;
 import br.com.gaudium.entrega.model.EntregadorObj;
@@ -36,6 +40,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private RelativeLayout layColetaButton, layEntregaButton, layMenu;
     private TextView txtEnderecoOferta, txtEnderecoColeta, txtEntrega;
     private Button btnRejeitar, btnAceitar, btnColetar, btnEntregar, btnDebugAction;
+    private ImageButton btnInitPerfil;
 
     Handler handler;
 
@@ -88,6 +93,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         btnDebugAction = findViewById(R.id.btnDebugAction);
         btnDebugAction.setOnClickListener(view -> onDebugAction());
+
+        // Itens Usuário
+        btnInitPerfil = findViewById(R.id.btnInitPerfilView);
+        btnInitPerfil.setOnClickListener(view -> gotToPerfilUser());
 
         // Preparar e carregar mapa
         mapFragment.getMapAsync(this);
@@ -423,5 +432,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 updateScreen();
             }
         }
+    }
+
+    private void gotToPerfilUser(){
+        Intent intent = new Intent(this, PerfilUserActivity.class);
+        startActivity(intent);
     }
 }
