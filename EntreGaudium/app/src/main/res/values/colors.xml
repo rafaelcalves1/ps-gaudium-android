@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#2B75FD</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="colorBlue">#041DBF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorCargoPerfil">#DFE9F7</color>
+    <color name="colorViewSemiTransparente">#CC2B76C9</color>
+    <color name="colorDescriptionPerfil">#ECF4FF</color>
 </resources>
