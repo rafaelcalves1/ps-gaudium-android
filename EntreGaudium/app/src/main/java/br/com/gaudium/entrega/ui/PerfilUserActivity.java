@@ -47,4 +47,8 @@ public class PerfilUserActivity extends Activity implements ModelPerfilInterface
         descricaoPerfil.setText(usuario.getDescricao());
         JSONArray array = usuario.getHistorico();
     }
+
+    private void trataArray(JSONArray jsonArray){
+        
+    }
 }
