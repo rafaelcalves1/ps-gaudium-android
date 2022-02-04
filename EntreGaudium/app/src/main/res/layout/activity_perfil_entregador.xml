@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:src="@drawable/img_entregador"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,6 +65,7 @@
             app:layout_constraintBottom_toTopOf="@id/constraintLayoutFilho"
             >
             <TextView
+                android:id="@+id/textView_descricao_perfil"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="@color/colorDescriptionPerfil"
